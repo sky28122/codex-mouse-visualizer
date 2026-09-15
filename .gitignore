@@ -1,0 +1,15 @@
+node_modules/
+temp/
+tmp/
+recordings/
+coverage/
+*.log
+*.pid
+*.tap
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

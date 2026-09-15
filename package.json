@@ -1,0 +1,16 @@
+{
+  "name": "codex-mouse-visualizer",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Natural visible browser pointer for Codex CDP sessions",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test tests/cursor.test.mjs tests/entry.test.mjs",
+    "start": "node server.mjs",
+    "loader": "node scripts/print-loader.mjs"
+  }
+}
