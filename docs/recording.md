@@ -1,5 +1,7 @@
 # 演示视频与编码
 
+**中文** | [English](recording.en.md)
+
 仓库附有真实浏览器录制：[从画面外自然移入](media/natural-cursor-entry-demo.mp4)。
 
 - 1280 × 720，60 fps，约 10.17 秒。
@@ -33,3 +35,5 @@ node scripts/encode-recording.mjs recordings/session recordings/demo.mp4
 ```
 
 `recordings/` 已加入忽略清单，避免将大量原始帧提交到仓库。
+
+[返回项目说明](../README.md)
