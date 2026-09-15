@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>交互工作台 · 本地演示</title>
+    <link rel="stylesheet" href="/demo/demo.css">
+    <script src="/demo/demo.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/demo/index.html" aria-label="交互工作台首页"><span class="brand-mark" aria-hidden="true">↗</span>交互工作台</a>
+      <span class="local-badge"><span aria-hidden="true"></span>本地演示</span>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-intro" aria-labelledby="page-title">
+        <p class="eyebrow">浏览器操作场景</p>
+        <h1 id="page-title">每一步操作，都看得见反馈。</h1>
+        <p>移动、点击、悬停、输入与拖动，在同一页面完成。</p>
+      </section>
+
+      <section class="card-grid" aria-label="常用交互">
+        <article class="card">
+          <div class="card-heading"><span class="step-number">01</span><h2>点击计数</h2></div>
+          <p class="card-description">每次按下按钮，计数增加一次。</p>
+          <div class="inline-action">
+            <button id="increment" class="button button-primary" type="button">记录一次</button>
+            <p class="count-display" aria-live="polite"><strong id="count">0</strong><span>次</span></p>
+          </div>
+        </article>
+
+        <article class="card menu-card">
+          <div class="card-heading"><span class="step-number">02</span><h2>悬停菜单</h2></div>
+          <p class="card-description">移动到按钮上，展开可操作的菜单。</p>
+          <div id="menu" class="menu">
+            <button id="menu-button" class="button button-secondary" type="button" aria-expanded="false" aria-controls="menu-panel">更多操作<span aria-hidden="true">⌄</span></button>
+            <div id="menu-panel" class="menu-panel">
+              <button id="menu-choice" class="menu-item" type="button">选择本地示例</button>
+              <a class="menu-item" href="/demo/next.html">打开第二页<span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <p id="menu-result" class="result-line" aria-live="polite">尚未选择菜单项</p>
+        </article>
+
+        <article class="card">
+          <div class="card-heading"><span class="step-number">03</span><h2>文本输入</h2></div>
+          <form id="search-form" class="search-form">
+            <label for="query">输入一个检索词</label>
+            <div class="input-group"><input id="query" name="query" type="text" placeholder="例如：金融科技" maxlength="80" autocomplete="off"><button id="submit-search" class="button button-primary" type="submit">提交</button></div>
+          </form>
+          <p id="search-result" class="result-line" aria-live="polite">提交后在本页显示输入内容</p>
+        </article>
+
+        <article class="card">
+          <div class="card-heading"><span class="step-number">04</span><h2>滑块拖动</h2></div>
+          <div class="range-label"><label for="volume">预览音量</label><output id="volume-value" for="volume">35%</output></div>
+          <input id="volume" class="range-input" type="range" min="0" max="100" step="1" value="35">
+          <div class="range-scale" aria-hidden="true"><span>0%</span><span>100%</span></div>
+          <p class="result-line">拖动滑块即可更新数值</p>
+        </article>
+
+        <article class="card">
+          <div class="card-heading"><span class="step-number">05</span><h2>页面跳转</h2></div>
+          <p class="card-description">打开同一站点的第二页，再返回这里。</p>
+          <a id="next-link" class="button button-secondary" href="/demo/next.html">打开第二页<span aria-hidden="true">↗</span></a>
+          <p class="result-line">页面底部还有一个滚动目标</p>
+        </article>
+
+        <article class="card event-card" aria-labelledby="event-title">
+          <div class="card-heading"><span class="status-dot" aria-hidden="true"></span><h2 id="event-title">浏览器事件</h2></div>
+          <div class="event-metrics">
+            <div><strong id="pointermove-count">0</strong><span>移动</span></div>
+            <div><strong id="mousedown-count">0</strong><span>按下</span></div>
+            <div><strong id="click-count">0</strong><span>点击</span></div>
+          </div>
+          <p class="coordinate-line">最后坐标 <output id="last-point">—，—</output><span>视口 px</span></p>
+        </article>
+      </section>
+
+      <section class="event-log-panel" aria-labelledby="event-log-title">
+        <div><h2 id="event-log-title">最近事件</h2><p>仅记录浏览器原生事件，保留最近 4 条。</p></div>
+        <ol id="event-log" class="event-log"><li class="empty-event">等待页面操作…</li></ol>
+      </section>
+
+      <section class="scroll-section" aria-labelledby="scroll-title">
+        <div class="scroll-intro"><p class="eyebrow">继续浏览</p><h2 id="scroll-title">向下滚动，查看页面底部。</h2><p>跨越首屏后，页面中的按钮仍然接收真实操作。</p><span class="scroll-arrow" aria-hidden="true">↓</span></div>
+        <article class="bottom-card" aria-labelledby="bottom-title">
+          <div><p class="eyebrow">滚动目标</p><h2 id="bottom-title">已到达页面下方</h2><p id="bottom-result" aria-live="polite">点击按钮，确认这里也能正常交互。</p></div>
+          <button id="bottom-button" class="button button-primary" type="button">确认到达</button>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>交互工作台</span><span>纯本地页面 · 无需账户</span><a href="#page-title">返回顶部 ↑</a></footer>
+  </body>
+</html>
