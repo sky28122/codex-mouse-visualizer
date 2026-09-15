@@ -1,5 +1,7 @@
 # Codex Mouse Visualizer
 
+**中文** | [English](README.en.md)
+
 **0.2.0 · Node.js 24+ · 无运行依赖 · MIT**
 
 让 Codex 在浏览器中的鼠标操作清晰可见：光标从画面边缘自然移入，沿柔和曲线移动，并在点击时显示轻量波纹。页面内的移动、悬停、按下、拖动和滚动通过当前标签页公开的 CDP 能力执行。
@@ -9,6 +11,8 @@
 [![自然光标演示预览](docs/media/demo-preview.png)](docs/media/natural-cursor-entry-demo.mp4)
 
 **[观看真实浏览器演示视频](docs/media/natural-cursor-entry-demo.mp4)** · [查看预览图](docs/media/demo-preview.png)
+
+[录制与编码说明](docs/recording.md)
 
 演示使用仓库内的普通 HTML 页面。光标由控制器在运行时注入，页面自身只提供按钮、菜单、输入框、滑块和事件统计。
 
