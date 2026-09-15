@@ -1,5 +1,7 @@
 # 在 Codex 中接入自然光标
 
+**中文** | [English](codex-integration.en.md)
+
 适用版本：**Codex Mouse Visualizer 0.2.0**。开始前，在 Codex 中将本仓库打开为工作区，使用 Node.js 24+，并在仓库根目录运行 `npm start`。
 
 本项目使用 Codex 浏览器工具当前公开的标签页 CDP 能力。以下 JavaScript 在持有 `cua`、`tab` 等对象的 **CUA JavaScript 会话**中执行；`npm` 命令在仓库终端执行。不同版本的工具接口应以当次初始化返回的文档为准。
